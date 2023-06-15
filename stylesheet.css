@@ -1,9 +1,16 @@
-h1 {
-    text-shadow: lightblue 3px 6px;
+h2 {
+    text-shadow: rgb(73, 87, 244) ;
 }
 h3 {
-    text-shadow: White 2px 2px 3px ;
+    text-shadow: rgba(242, 249, 248, 0.279) 1px 1px 2px ;
 }
-div {
-	background-color: red;
+h4{
+    text-shadow: rgb(222, 233, 239) 2px 2px 3px;
+}
+body {
+	background: linear-gradient(blue, 10%, pink);
+}
+a {
+    color: rgb(246, 88, 14);
+    text-decoration: none;
 }
