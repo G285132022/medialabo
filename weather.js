@@ -47,3 +47,20 @@ let data = {
 
 ////////// 課題3-2 ここからプログラムを書こう
 
+console.long(date.name);
+for(let a of "name"){
+  console.log(a.name);
+}
+
+let b = document.querySelector('button#button');
+ax.addEventListener('click', hatatei);
+
+console.log(data.name);
+console.log(data.weather[0].description);
+console.log(data.coord.lon);
+console.log(data.coord.lat);
+console.log(data.main.temp_min);
+console.log(data.main.temp_max);
+console.log(data.main.humidity);
+console.log(data.wind.speed);
+console.log(data.wind.deg);
