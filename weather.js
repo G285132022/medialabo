@@ -55,6 +55,10 @@ for(let a of "name"){
 let b = document.querySelector('button#button');
 ax.addEventListener('click', hatatei);
 
+
+
+
+
 console.log(data.name);
 console.log(data.weather[0].description);
 console.log(data.coord.lon);
@@ -64,3 +68,24 @@ console.log(data.main.temp_max);
 console.log(data.main.humidity);
 console.log(data.wind.speed);
 console.log(data.wind.deg);
+
+
+// データをコンソールに出力
+let a1=document.querySelector("span#s1");
+a1.textContent=data.name;
+let a2=document.querySelector("span#s2");
+a2.textContent=data.weather[0].description;
+let a3=document.querySelector("span#s3");
+a3.textContent=data.coord.lon;
+let a4=document.querySelector("span#s4");
+a4.textContent=data.coord.lat;
+let a5=document.querySelector("span#s5");
+a5.textContent=data.main.temp_min;
+let a6=document.querySelector("span#s6");
+a6.textContent=data.main.temp_max;
+let a7=document.querySelector("span#s7");
+a7.textContent=data.main.humidity;
+let a8=document.querySelector("span#s8");
+a8.textContent=data.wind.speed;
+let a9=document.querySelector("span#s9");
+a9.textContent=data.wind.deg;
