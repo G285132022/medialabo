@@ -54,20 +54,62 @@ for(let a of "name"){
 
 let b = document.querySelector('button#button');
 ax.addEventListener('click', hatatei);
+function showSelectResult() {
+  let a = document.querySelector('select#t');
+  let idx = a.selectedIndex;  // idx 番目の option が選択された
+  
+  let as = a.querySelectorAll('option');  // a の子要素 option をすべて検索
+  let q = as.item(idx);       // q の idx 番目の要素
+  
+  span=0;
+    if(span>1){
+      let w = document.querySelector('span#pt');			// span#pt 要素を検索
+      w.remove();
+      span=span+1;
+      let span=document.querySelector("span#pt");
+      let p=document.createElement("p");
+      let img=document.createElement("img");
+      img.setAttribute=("src");
+      img.src="photojs/"+v+".jpeg";
+      p.insertAdjacentElement("beforeend", img);
+      span.insertAdjacentElement("beforeend", p);
+      console.log(img)
+    }	else{
+      //span=span+1;
+      let span=document.querySelector("span#pt");
+      let p=document.createElement("p");
+      let img=document.createElement("img");
+      img.setAttribute=("src");
+      img.src="photojs/"+v+".jpeg";
+      p.insertAdjacentElement("beforeend", img);
+      span.insertAdjacentElement("beforeend", p);
+      console.log(img)
+    }
+    let span=document.querySelector("span#pt");
+    let p=document.createElement("p");
+    let img=document.createElement("img");
+    img.setAttribute=("src");
+    img.src="photojs/"+v+".jpeg";
+    p.insertAdjacentElement("beforeend", img);
+    span.insertAdjacentElement("beforeend", p);
+    span=span+1;
+    console.log(img)
+}
 
 
 
 
 
-console.log(data.name);
-console.log(data.weather[0].description);
-console.log(data.coord.lon);
-console.log(data.coord.lat);
-console.log(data.main.temp_min);
-console.log(data.main.temp_max);
-console.log(data.main.humidity);
-console.log(data.wind.speed);
-console.log(data.wind.deg);
+//console.log(data.name);
+//console.log(data.weather[0].description);
+//console.log(data.coord.lon);
+//console.log(data.coord.lat);
+//console.log(data.main.temp_min);
+//console.log(data.main.temp_max);
+//console.log(data.main.humidity);
+//console.log(data.wind.speed);
+//console.log(data.wind.deg);
+
 
 
 // データをコンソールに出力
