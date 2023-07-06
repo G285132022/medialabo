@@ -27,37 +27,33 @@ function hantei() {
   let a1=document.querySelector("span#answer");
   a1.textContent=yoso;
 
-  let w=document.querySelector("p#result");
+  let u=document.querySelector("p#result");
   
-  if (yoso === kotae) {
-    let span = document.querySelector('span#kaisu');
-    span.textContent = kaisu;
-    let span1 = document.querySelector('span#answer');
-    span1.textContent = yoso;
-    let p = document.querySelector('p#result');
-    p.textContent = "正解です。おめでとう!";
-  } else if (kaisu > 3){
-    let span = document.querySelector('span#kaisu');
-    span.textContent = kaisu;
-    let span1 = document.querySelector('span#answer');
-    span1.textContent = yoso;
-    let p = document.querySelector('p#result');
-    p.textContent = "答えは" + kotae + " でした。すでにゲームは終わっています";
-  }
-  else  if (yoso < kotae){
-    let span = document.querySelector('span#kaisu');
-    span.textContent = kaisu;
-    let span1 = document.querySelector('span#answer');
-    span1.textContent = yoso;
-    let p = document.querySelector('p#result');
-    p.textContent = "まちがい。答えはもっと大きいですよ";
-  }else if (yoso > kotae) {
-    let span = document.querySelector('span#kaisu');
-    span.textContent = kaisu;
-    let span1 = document.querySelector('span#answer');
-    span1.textContent = yoso;
-    let p = document.querySelector('p#result');
-    p.textContent = "まちがい。答えはもっと大きいですよ";
+  if(kaisu<3){
+    if(yoso<kotae){
+      u.textContent="まちがい．答えはもっと大きいですよ";
+    } else if(kotae<yoso){
+      u.textContent="まちがい．答えはもっと小さいですよ";
+    } 
+    
+    if((kaisu-1)&&yoso===kotae){
+      u.textContent="答えは"+kotae+"でした．すでにゲームは終わっています";
+    }else if(yoso==kotae){
+      u.textContent="正解です.おめでとう！";
+    }}
+
+    if(kaisu===3){
+      if((kaisu-1)&&yoso===kotae){
+        u.textContent="答えは"+kotae+"でした．すでにゲームは終わっています";
+      }else if(yoso==kotae){
+        u.textContent="正解です.おめでとう！";
+      }else{
+        u.textContent="答えは"+kotae+"でした．すでにゲームは終わっています";
+      }
+
+    if(kaisu>=4){
+      u.textContent="答えは"+kotae+"でした．すでにゲームは終わっています";
+    }
   }
   
   // kotae と yoso が一致するかどうか調べて結果を出力
