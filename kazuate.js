@@ -23,40 +23,42 @@ function hantei() {
   let k1=document.querySelector("span#kaisu");
   k1.textContent=kaisu;
 
-  let yoso = number;
+  let yoso = Number(i.value);
   let a1=document.querySelector("span#answer");
   a1.textContent=yoso;
 
   let u=document.querySelector("p#result");
-  
-  if(kaisu<4){
-    if(yoso<kotae){
-      u.textContent="まちがい．答えはもっと大きいですよ";
-    } else if(kotae<yoso){
-      u.textContent="まちがい．答えはもっと小さいですよ";
-    } 
-    
-    if((kaisu-1)&&yoso===kotae){
-      u.textContent="答えは"+kotae+"でした．すでにゲームは終わっています";
-    }else if(yoso==kotae){
-      u.textContent="正解です.おめでとう！";
-    }}
 
-    if(kaisu===4){
-      if((kaisu-1)&&yoso===kotae){
-        u.textContent="答えは"+kotae+"でした．すでにゲームは終わっています";
-      }else if(yoso==kotae){
-        u.textContent="正解です.おめでとう！";
-      }else{
-        u.textContent="答えは"+kotae+"でした．すでにゲームは終わっています";
+  if(kaisu===1){
+       if(kotae===yoso){
+           u.textContent = "正解です.おめでとう！";
+        }else if(kotae > yoso){
+           u.textContent = "まちがい．答えはもっと大きいですよ";
+        }else if(kotae < yoso){
+           u.textContent = "まちがい．答えはもっと小さいですよ";
+        }
+  }if(kaisu===2){
+      if(kotae===yoso){
+         u.textContent = "正解です.おめでとう！";
+      }else if(kotae > yoso){
+         u.textContent = "まちがい．答えはもっと大きいですよ";
+      }else if(kotae < yoso){
+         u.textContent = "まちがい．答えはもっと小さいですよ";
       }
-
-    if(kaisu>=5){
-      u.textContent="答えは"+kotae+"でした．すでにゲームは終わっています";
-    }
+  }if(kaisu===3){
+        if(kotae===yoso){
+           u.textContent = "正解です.おめでとう！";
+        }else{
+           u.textContent = "まちがい.残念でした答えは"+kotae+"です.";
+        }
+  }if(kaisu>3){
+      u.textContent = "答えは"+kotae+"でした．すでにゲームは終わっています";
   }
   
+}
   // kotae と yoso が一致するかどうか調べて結果を出力
 
   // 課題3-1における出力先はコンソール
-}
+
+
+
