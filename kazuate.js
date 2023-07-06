@@ -29,7 +29,7 @@ function hantei() {
 
   let u=document.querySelector("p#result");
   
-  if(kaisu<3){
+  if(kaisu<4){
     if(yoso<kotae){
       u.textContent="まちがい．答えはもっと大きいですよ";
     } else if(kotae<yoso){
@@ -42,7 +42,7 @@ function hantei() {
       u.textContent="正解です.おめでとう！";
     }}
 
-    if(kaisu===3){
+    if(kaisu===4){
       if((kaisu-1)&&yoso===kotae){
         u.textContent="答えは"+kotae+"でした．すでにゲームは終わっています";
       }else if(yoso==kotae){
@@ -51,7 +51,7 @@ function hantei() {
         u.textContent="答えは"+kotae+"でした．すでにゲームは終わっています";
       }
 
-    if(kaisu>=4){
+    if(kaisu>=5){
       u.textContent="答えは"+kotae+"でした．すでにゲームは終わっています";
     }
   }
