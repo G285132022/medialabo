@@ -48,22 +48,23 @@ let data = {
 ////////// 課題3-2 ここからプログラムを書こう
 
 console.log(data.name);
-for(let a of "name"){
-  console.log(a.name);
+for(let co of "name"){
+  console.log(co.name);
 }
 
-let b = document.querySelector('button#button');
-ax.addEventListener('click', hatatei);
+//let b = document.querySelector('button#btn');
+//b.addEventListener('click',showSelectResult);
+
 function showSelectResult() {
   let a = document.querySelector('select#t');
-  let idx = a.selectedIndex;  // idx 番目の option が選択された
+  let idx = a.selectedIndex; 
   
-  let as = a.querySelectorAll('option');  // a の子要素 option をすべて検索
-  let q = as.item(idx);       // q の idx 番目の要素
+  let as = a.querySelectorAll('option');  
+  let q = as.item(idx);      
   
   span=0;
     if(span>1){
-      let w = document.querySelector('span#pt');			// span#pt 要素を検索
+      let w = document.querySelector('span#pt');			
       w.remove();
       span=span+1;
       let span=document.querySelector("span#pt");
@@ -85,7 +86,7 @@ function showSelectResult() {
       span.insertAdjacentElement("beforeend", p);
       console.log(img)
     }
-    let span=document.querySelector("span#pt");
+    /*let span=document.querySelector("span#pt");
     let p=document.createElement("p");
     let img=document.createElement("img");
     img.setAttribute=("src");
@@ -93,41 +94,65 @@ function showSelectResult() {
     p.insertAdjacentElement("beforeend", img);
     span.insertAdjacentElement("beforeend", p);
     span=span+1;
-    console.log(img)
+    console.log(img)*/
+
+    axios.get(url)
+    .then(showResult)
+    .catch(showError)   
+    .then(finish);      
 }
 
 
+function showResult(resp) {
+  let data = resp.data;
+
+  if (typeof data === 'string') {
+      data = JSON.parse(data);
+  }
 
 
 
-//console.log(data.name);
-//console.log(data.weather[0].description);
-//console.log(data.coord.lon);
-//console.log(data.coord.lat);
-//console.log(data.main.temp_min);
-//console.log(data.main.temp_max);
-//console.log(data.main.humidity);
-//console.log(data.wind.speed);
-//console.log(data.wind.deg);
+
+  //console.log(data.name);
+  //console.log(data.weather[0].description);
+  //console.log(data.coord.lon);
+  //console.log(data.coord.lat);
+  //console.log(data.main.temp_min);
+  //console.log(data.main.temp_max);
+  //console.log(data.main.humidity);
+  //console.log(data.wind.speed);
+  //console.log(data.wind.deg);
 
 
 
-// データをコンソールに出力
-let a1=document.querySelector("span#s1");
-a1.textContent=data.name;
-let a2=document.querySelector("span#s2");
-a2.textContent=data.weather[0].description;
-let a3=document.querySelector("span#s3");
-a3.textContent=data.coord.lon;
-let a4=document.querySelector("span#s4");
-a4.textContent=data.coord.lat;
-let a5=document.querySelector("span#s5");
-a5.textContent=data.main.temp_min;
-let a6=document.querySelector("span#s6");
-a6.textContent=data.main.temp_max;
-let a7=document.querySelector("span#s7");
-a7.textContent=data.main.humidity;
-let a8=document.querySelector("span#s8");
-a8.textContent=data.wind.speed;
-let a9=document.querySelector("span#s9");
-a9.textContent=data.wind.deg;
+  // データをコンソールに出力
+  let q1=document.querySelector("span#s1");
+  q1.textContent=data.name;
+  let q2=document.querySelector("span#s2");
+  q2.textContent=data.weather[0].description;
+  let q3=document.querySelector("span#s3");
+  q3.textContent=data.coord.lon;
+  let q4=document.querySelector("span#s4");
+  q4.textContent=data.coord.lat;
+  let q5=document.querySelector("span#s5");
+  q5.textContent=data.main.temp_min;
+  let q6=document.querySelector("span#s6");
+  q6.textContent=data.main.temp_max;
+  let q7=document.querySelector("span#s7");
+  q7.textContent=data.main.humidity;
+  let q8=document.querySelector("span#s8");
+  q8.textContent=data.wind.speed;
+  let q9=document.querySelector("span#s9");
+  q9.textContent=data.wind.deg;
+
+}
+
+
+function showError(err) {
+  console.log(err);
+}
+
+
+function finish() {
+  console.log('通信が終わりました');
+}
