@@ -47,25 +47,30 @@ let data = {
 
 ////////// 課題3-2 ここからプログラムを書こう
 
-console.log(data.name);
+console.log(data.u);
 for(let co of "name"){
-  console.log(co.name);
+  console.log(co.u);
 }
 
-//let b = document.querySelector('button#btn');
-//b.addEventListener('click',showSelectResult);
+let b = document.querySelector('button#btn');
+b.addEventListener('click',showSelectResult);
 
 function showSelectResult() {
   let a = document.querySelector('select#t');
   let idx = a.selectedIndex; 
   
   let as = a.querySelectorAll('option');  
-  let q = as.item(idx);      
+  let q = as.item(idx);
+
+  let v=q.value;
+  let url ="https://wwww.nishita-lab.org/web-contents/jsons/openweather/"+v+".json";
+  console.log(url);
   
   span=0;
     if(span>1){
       let w = document.querySelector('span#pt');			
       w.remove();
+
       span=span+1;
       let span=document.querySelector("span#pt");
       let p=document.createElement("p");
@@ -76,7 +81,7 @@ function showSelectResult() {
       span.insertAdjacentElement("beforeend", p);
       console.log(img)
     }	else{
-      //span=span+1;
+      span=span+1;
       let span=document.querySelector("span#pt");
       let p=document.createElement("p");
       let img=document.createElement("img");
@@ -86,7 +91,7 @@ function showSelectResult() {
       span.insertAdjacentElement("beforeend", p);
       console.log(img)
     }
-    /*let span=document.querySelector("span#pt");
+    let span=document.querySelector("span#pt");
     let p=document.createElement("p");
     let img=document.createElement("img");
     img.setAttribute=("src");
@@ -94,7 +99,7 @@ function showSelectResult() {
     p.insertAdjacentElement("beforeend", img);
     span.insertAdjacentElement("beforeend", p);
     span=span+1;
-    console.log(img)*/
+    console.log(img)
 
     axios.get(url)
     .then(showResult)
