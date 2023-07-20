@@ -5,6 +5,8 @@
       <title> 世界の天気</title>
       <link rel="stylesheet" href="color.css">
       <script src="weather.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+    </head>
    </head>
     <body background="天気背景.jpg"></body>
   <body>  
@@ -19,24 +21,87 @@
     <button id="print">検索</button> -->
 
     <center>
-    <select name="u" id="a">
-      <option value="360630">カイロ(エジプト)</option>
-      <option value="524901">モスクワ(ロシア)</option>
-      <option value="993800">ヨハネスブルク(南アフリカ)</option>
-      <option value="1816670">北京(中華人民共和国)</option>
-      <option value="1850147">東京(日本)</option>
-      <option value="1880252">シンガポール</option>
-      <option value="2147714">シドニー(オーストラリア)</option>
-      <option value="2643743">ロンドン(イギリス)</option>
-      <option value="2968815">パリ(フランス)</option>
-      <option value="3451189">リオデジャネイロ(ブラジル)</option>
-      <option value="5128581">ニューヨーク(アメリカ合衆国)</option>
-      <option value="5368361">ロサンゼルス(アメリカ合衆国)</option>
+      <tbody>
+        <p>
+          <tr>
+            <th>あなたが知りたい都市を選んでください！！</th>
+          </tr>
+        </p>
+      </tbody>
+    <select name="u" id="u">
+      <option value="kuni">知りたい都市はどこ??</option>
+      <option value="Cairo" id="360630">カイロ(エジプト)</option>
+      <option value="Moscow" id="524901">モスクワ(ロシア)</option>
+      <option value="Johannesburg" id="993800">ヨハネスブルク(南アフリカ)</option>
+      <option value="Beijing" id="1816670">北京(中華人民共和国)</option>
+      <option value="Tokyo" id="1850147">東京(日本)</option>
+      <option value="Singapore" id="1880252">シンガポール</option>
+      <option value="Sydney" id="2147714">シドニー(オーストラリア)</option>
+      <option value="London" id="2643743">ロンドン(イギリス)</option>
+      <option value="Paris" id="2968815">パリ(フランス)</option>
+      <option value="Rio de Janeiro" id="3451189">リオデジャネイロ(ブラジル)</option>
+      <option value="New York" id="5128581">ニューヨーク(アメリカ合衆国)</option>
+      <option value="Los Angeles" id="5368361">ロサンゼルス(アメリカ合衆国)</option>
       </select>
-    <button id="botton">検索</button>
+    <button id="button">検索</button>
     </center>
-      
-    
+
+    <tbody>
+      <p>
+      <tr>
+        <th>都市名：</th>
+        <th class="toshi"></th>
+      </tr>
+    </p>
+    <p>
+      <tr>
+        <th>緯度：</th>
+        <th class="lon"></th>
+      </tr>
+    </p>
+    <p>
+      <tr>
+        <th>経度：</th>
+        <th calss="lat"></th>
+      </tr>
+    </p>
+    <p>
+      <tr>
+        <th>天気：</th>
+        <th class="weather"></th>
+      </tr>
+    </p>
+    <p>
+      <tr>
+        <th>最低気温：</th>
+        <th class="temn_min"></th>
+      </tr>
+    </p>
+    <p>
+      <tr>
+        <th>最高気温：</th>
+        <th class="temn_max"></th>
+      </tr>
+    </p>
+    <p>
+      <tr>
+        <th>湿度：</th>
+        <th class="humidity"></th>
+      </tr>
+    </p>
+    <p>
+      <tr>
+        <th>風速：</th>
+        <th class="spead"></th>
+      </tr>
+    </p>
+    <p>
+      <tr>
+        <th>風向：</th>
+        <th class="deg"></th>
+      </tr>
+    </p>
+    </tbody>
    </body>
 </html>
 

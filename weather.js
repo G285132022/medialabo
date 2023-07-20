@@ -46,65 +46,69 @@ let data = {
 };
 
 ////////// 課題3-2 ここからプログラムを書こう
-let b = document.querySelector('button#botan');
-  b.addEventListener('click',result);
+
+
+  console.log('都市名 '+data.name);
+  console.log('緯度 '+data.coord.lat + " °");
+  console.log('経度 '+data.coord.lon + " °");
+  console.log('天気 '+data.weather[0].main);
+  console.log('最低気温 '+data.main.temp_min + " °C");
+  console.log('最高気温 '+data.main.temp_max + " °C");
+  console.log('湿度 '+data.main.humidity + " %");
+  console.log('風速 '+data.wind.speed + " m/s");
+  console.log('風向 '+data.wind.deg + " kt");
+
+  let cpt = document.querySelector('#button');
+  cpt.addEventListener('click', sendRequest);
   
- /* function result() {
-    let a = document.querySelector('select#kensaku');
-    let an = a.selectedIndex;
-    let c = a.querySelectorAll('option');
-    let cn = c.item(an);
-    let f = cn.getAttribute('value');
-    return {
-      f
-    };
-  }
-  b.addEventListener('click',sendRequest);
+  function sendRequest(){
+    let q = document.querySelector('select#u');
+    let idx = q.selectedIndex; 
+
+    let us = q.querySelectorAll('option');  
+    let app = us.item(idx);       
+    let id = app.getAttribute("id");
+    let url='https://www.nishita-lab.org/web-contents/jsons/openweather/'+id+'.json';
   
-  function sendRequest() {
-    let e = 'https://www.nishita-lab.org/web-contents/jsons/openweather/' + result().f + '.json';
-    let url = e;
     axios.get(url)
           .then(showResult)   
-          .catch(showError)  
-          .then(finish);
+          .catch(showError)   
+          .then(finish);      
   }
+  
   function showResult(resp) {
     let data = resp.data;
+  
     if (typeof data === 'string') {
         data = JSON.parse(data);
     }
     console.log(data);
     console.log(data.x);
-    for (n of data.weather) {
-      console.log(n);
-      var obj = n; 
-    }
-    
-    let t1 = document.querySelector('span#name');
-    t1.textContent = data.name;
-    let t2 = document.querySelector('span#ido');
-    t2.textContent = data.coord.lat;
-    let t3 = document.querySelector('span#keido');
-    t3.textContent = data.coord.lon;
-    let t4 = document.querySelector('span#weather');
-    t4.textContent = obj.description;
-    let t5 = document.querySelector('span#mintemp');
-    t5.textContent = data.main.temp_min;
-    let t6 = document.querySelector('span#maxtemp');
-    t6.textContent = data.main.temp_max;
-    let t7 = document.querySelector('span#situdo');
-    t7.textContent = data.main.humidity;
-    let t8 = document.querySelector('span#husoku');
-    t8.textContent = data.wind.speed;
-    let t9 = document.querySelector('span#hukou');
-    t9.textContent = data.wind.deg;
+  
+    let toshi =document.querySelector('caption.toshi');
+    toshi.textContent = data.name;
+    let lat =document.querySelector('td.lat');
+    lat.textContent = data.coord.lat;
+    let lon = document.querySelector('td.lon');
+    lon.textContent = data.coord.lon;
+    let weather = document.querySelector('td.weather');
+    weather.textContent = data.weather[0].description;
+    let temp_min = document.querySelector('td.temp_min');
+    temp_min.textContent = data.main.temp_min;
+    let temp_max = document.querySelector('td.temp_max');
+    temp_max.textContent = data.main.temp_max;
+    let humidity = document.querySelector('td.humidity');
+    humidity.textContent = data.main.humidity;
+    let speed = document.querySelector('td.speed');
+    speed.textContent = data.wind.speed;
+    let deg = document.querySelector('td.deg');
+    deg.textContent = data.wind.deg;
   }
+  
   function showError(err) {
-    console.log(err);
+    console.log("errが発生しました");
   }
+  
   function finish() {
-    console.log('Ajax 通信が終わりました');
+    console.log("Ajax 通信が終わりました");
   }
-  */
- 
