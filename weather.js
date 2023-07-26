@@ -112,3 +112,5 @@ let data = {
   function finish() {
     console.log("Ajax 通信が終わりました");
   }
+
+
