@@ -66,9 +66,13 @@ let data = {
     let idx = q.selectedIndex; 
 
     let us = q.querySelectorAll('option');  
-    let app = us.item(idx);       
-    let id = app.getAttribute("id");
-    let url='https://www.nishita-lab.org/web-contents/jsons/openweather/'+id+'.json';
+    let app = us.item(idx);     
+    
+    
+      let id = app.getAttribute("id");
+      let url='https://www.nishita-lab.org/web-contents/jsons/openweather/'+id +'.json';
+      console.log(url);
+    
   
     axios.get(url)
           .then(showResult)   
@@ -83,26 +87,28 @@ let data = {
         data = JSON.parse(data);
     }
     console.log(data);
-    console.log(data.x);
+    console.log(data.x); //ここまでOK
+
+    //ここから下の部分が問題の箇所
   
-    let toshi =document.querySelector('caption.toshi');
-    toshi.textContent = data.name;
-    let lat =document.querySelector('td.lat');
-    lat.textContent = data.coord.lat;
-    let lon = document.querySelector('td.lon');
-    lon.textContent = data.coord.lon;
-    let weather = document.querySelector('td.weather');
-    weather.textContent = data.weather[0].description;
-    let temp_min = document.querySelector('td.temp_min');
-    temp_min.textContent = data.main.temp_min;
-    let temp_max = document.querySelector('td.temp_max');
-    temp_max.textContent = data.main.temp_max;
-    let humidity = document.querySelector('td.humidity');
-    humidity.textContent = data.main.humidity;
-    let speed = document.querySelector('td.speed');
-    speed.textContent = data.wind.speed;
-    let deg = document.querySelector('td.deg');
-    deg.textContent = data.wind.deg;
+    let p1 =document.querySelector('caption.city');
+    p1.textContent = data.name;
+    let p2 =document.querySelector('td#lat');
+    p2.textContent = data.coord.lat;
+    let p3 = document.querySelector('td#lon');
+    p3.textContent = data.coord.lon;
+    let p4 = document.querySelector('td#weather');
+    p4.textContent = data.weather[0].description;
+    let p5 = document.querySelector('td#temp_min');
+    p5.textContent = data.main.temp_min;
+    let p6 = document.querySelector('td#temp_max');
+    p6.textContent = data.main.temp_max;
+    let p7 = document.querySelector('td#humidity');
+    p7.textContent = data.main.humidity;
+    let p8 = document.querySelector('td#speed');
+    p8.textContent = data.wind.speed;
+    let p9 = document.querySelector('td#deg');
+    p9.textContent = data.wind.deg;
   }
   
   function showError(err) {
@@ -113,4 +119,9 @@ let data = {
     console.log("Ajax 通信が終わりました");
   }
 
-
+  console.log(data.name);
+  console.log(data.weather[0].description);
+  console.log(data.main.temp_max);
+  console.log(data.main.temp_min);
+  console.log(data.wind.deg);
+  console.log(data.wind.speed);
