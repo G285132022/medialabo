@@ -93,21 +93,21 @@ let data = {
     let tenki1 = document.querySelector("span#p1");
     tenki1.textContent = data.name; 
     let tenki2 = document.querySelector("span#p2");
-    tenki2.textContent = data.coord.lon + " °";
+    tenki2.textContent = data.coord.lon;
     let tenki3 = document.querySelector("span#p3");
-    tenki3.textContent = data.coord.lat + " °";
+    tenki3.textContent = data.coord.lat;
     let tenki4 = document.querySelector("span#p4");
     tenki4.textContent = data.weather[0].description;
     let tenki5 = document.querySelector("span#p5");
-    tenki5.textContent = data.main.temp_min + " °C";
+    tenki5.textContent = data.main.temp_min;
     let tenki6 = document.querySelector("span#p6");
-    tenki6.textContent = data.main.temp_max + " °C";
+    tenki6.textContent = data.main.temp_max;
     let tenki7 = document.querySelector("span#p7");
-    tenki7.textContent = data.main.humidity + " %";
+    tenki7.textContent = data.main.humidity;
     let tenki8 = document.querySelector("span#p8");
-    tenki8.textContent = data.wind.speed + " m/s";
+    tenki8.textContent = data.wind.speed;
     let tenki9 = document.querySelector("span#p9");
-    tenki9.textContent = data.wind.deg + " kt";
+    tenki9.textContent = data.wind.deg;
   }
   
   function showError(err) {
