@@ -49,14 +49,14 @@ let data = {
 
 
   console.log('都市名 '+data.name);
-  console.log('緯度 '+data.coord.lat + " °");
-  console.log('経度 '+data.coord.lon + " °");
+  console.log('緯度 '+data.coord.lat);
+  console.log('経度 '+data.coord.lon);
   console.log('天気 '+data.weather[0].main);
-  console.log('最低気温 '+data.main.temp_min + " °C");
-  console.log('最高気温 '+data.main.temp_max + " °C");
-  console.log('湿度 '+data.main.humidity + " %");
-  console.log('風速 '+data.wind.speed + " m/s");
-  console.log('風向 '+data.wind.deg + " kt");
+  console.log('最低気温 '+data.main.temp_min);
+  console.log('最高気温 '+data.main.temp_max);
+  console.log('湿度 '+data.main.humidity);
+  console.log('風速 '+data.wind.speed);
+  console.log('風向 '+data.wind.deg);
 
   let cpt = document.querySelector('#button');
   cpt.addEventListener('click', sendRequest);
@@ -69,8 +69,8 @@ let data = {
     let app = us.item(idx);     
     
     
-      let id = app.getAttribute("id");
-      let url='https://www.nishita-lab.org/web-contents/jsons/openweather/'+id +'.json';
+      let id = app.getAttribute('id');
+      let url='https://www.nishita-lab.org/web-contents/jsons/openweather/'+id+'.json';
       console.log(url);
     
   
@@ -87,28 +87,27 @@ let data = {
         data = JSON.parse(data);
     }
     console.log(data);
-    console.log(data.x); //ここまでOK
+    console.log(data.x); 
 
-    //ここから下の部分が問題の箇所
   
-    let p1 =document.querySelector('caption.city');
-    p1.textContent = data.name;
-    let p2 =document.querySelector('td#lat');
-    p2.textContent = data.coord.lat;
-    let p3 = document.querySelector('td#lon');
-    p3.textContent = data.coord.lon;
-    let p4 = document.querySelector('td#weather');
-    p4.textContent = data.weather[0].description;
-    let p5 = document.querySelector('td#temp_min');
-    p5.textContent = data.main.temp_min;
-    let p6 = document.querySelector('td#temp_max');
-    p6.textContent = data.main.temp_max;
-    let p7 = document.querySelector('td#humidity');
-    p7.textContent = data.main.humidity;
-    let p8 = document.querySelector('td#speed');
-    p8.textContent = data.wind.speed;
-    let p9 = document.querySelector('td#deg');
-    p9.textContent = data.wind.deg;
+    let tenki1 = document.querySelector("span#p1");
+    tenki1.textContent = data.name; 
+    let tenki2 = document.querySelector("span#p2");
+    tenki2.textContent = data.coord.lon + " °";
+    let tenki3 = document.querySelector("span#p3");
+    tenki3.textContent = data.coord.lat + " °";
+    let tenki4 = document.querySelector("span#p4");
+    tenki4.textContent = data.weather[0].description;
+    let tenki5 = document.querySelector("span#p5");
+    tenki5.textContent = data.main.temp_min + " °C";
+    let tenki6 = document.querySelector("span#p6");
+    tenki6.textContent = data.main.temp_max + " °C";
+    let tenki7 = document.querySelector("span#p7");
+    tenki7.textContent = data.main.humidity + " %";
+    let tenki8 = document.querySelector("span#p8");
+    tenki8.textContent = data.wind.speed + " m/s";
+    let tenki9 = document.querySelector("span#p9");
+    tenki9.textContent = data.wind.deg + " kt";
   }
   
   function showError(err) {
@@ -118,10 +117,3 @@ let data = {
   function finish() {
     console.log("Ajax 通信が終わりました");
   }
-
-  console.log(data.name);
-  console.log(data.weather[0].description);
-  console.log(data.main.temp_max);
-  console.log(data.main.temp_min);
-  console.log(data.wind.deg);
-  console.log(data.wind.speed);

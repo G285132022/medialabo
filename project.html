@@ -12,97 +12,100 @@
   <body>  
     <h1>
      <p>
-      <center>世界の天気</center>
+      <center><h1>世界の天気</h1></center>
       </p>
     </h1>
-
-    <!-- <label for="city">都市を選んでください </label>
-    <input type="text" name="city" id="city" size="10">
-    <button id="print">検索</button> -->
 
     <center>
       <tbody>
         <p>
           <tr>
-            <th>あなたが知りたい都市を選んでください！！</th>
+            <h4>あなたが知りたい都市を選んでください！！<h4-4>(1都市限定(^○^))</h4-4>
+            </h4>
           </tr>
         </p>
-      </tbody>
+      </tbody> 
+      
     <select name="u" id="u">
-      <option value="kuni">知りたい都市はどこ??</option>
-      <option value="Cairo" id="360630">カイロ(エジプト)</option>
-      <option value="Moscow" id="524901">モスクワ(ロシア)</option>
-      <option value="Johannesburg" id="993800">ヨハネスブルク(南アフリカ)</option>
-      <option value="Beijing" id="1816670">北京(中華人民共和国)</option>
-      <option value="Tokyo" id="1850147">東京(日本)</option>
-      <option value="Singapore" id="1880252">シンガポール</option>
-      <option value="Sydney" id="2147714">シドニー(オーストラリア)</option>
-      <option value="London" id="2643743">ロンドン(イギリス)</option>
-      <option value="Paris" id="2968815">パリ(フランス)</option>
-      <option value="Rio de Janeiro" id="3451189">リオデジャネイロ(ブラジル)</option>
-      <option value="New York" id="5128581">ニューヨーク(アメリカ合衆国)</option>
-      <option value="Los Angeles" id="5368361">ロサンゼルス(アメリカ合衆国)</option>
+      <option>知りたい都市はどこ??</option>
+      <option id="360630" value="Cairo">カイロ(エジプト)</option>
+      <option id="524901" value="Moscow">モスクワ(ロシア)</option>
+      <option id="993800" value="Johannesburg">ヨハネスブルク(南アフリカ)</option>
+      <option id="1816670" value="Beijing">北京(中華人民共和国)</option>
+      <option id="1850147value" value="Tokyo">東京(日本)</option>
+      <option id="1880252" value="Singapore">シンガポール</option>
+      <option id="2147714" value="Sydney">シドニー(オーストラリア)</option>
+      <option id="2643743" value="London">ロンドン(イギリス)</option>
+      <option id="2968815" value="Paris">パリ(フランス)</option>
+      <option id="3451189" value="Rio de Janeiro">リオデジャネイロ(ブラジル)</option>
+      <option id="5128581" value="New York">ニューヨーク(アメリカ合衆国)</option>
+      <option id="5368361" value="Los Angeles">ロサンゼルス(アメリカ合衆国)</option>
       </select>
     <button id="button">検索</button>
     </center>
 
-    <tbody>
+   <center>
+    <table>
       <p>
-      <tr>
-        <th>都市名</th>
-        <caption class="noc"></caption>
+      <caption class="noc"></caption>
+      <h3>都市名: 
+      <span id="p1"></span>
+      </h3>
+      </p>
+    </table>
+     <tr>
+       <p>
+        <caption class="lon"></caption>
+        <h3>緯度:
+        <span id="p2"></span>
+        </h3>
+        </p>
+        <p>
+        <caption class="lat"></caption>
+        <h3>経度:
+        <span id="p3"></span>
+        </h3>
+        </p>
+        <p>
+        <caption class="weather"></caption>
+        <h3>天気:
+        <span id="p4"></span>
+        </h3>
+        </p>
+        <p>
+        <caption class="temn_min"></caption>
+        <h3>最低気温:
+        <span id="p5"></span>
+        </h3>
+        </p>
+        <p>
+        <caption class="temn_max"></caption>
+        <h3>最高気温:
+        <span id="p6"></span>
+        </h3>
+        </p>
+        <p>
+        <caption class="humidity"></caption>
+        <h3>湿度:
+        <span id="p7"></span>
+        </h3>
+        </p>
+        <p>
+        <caption class="spead"></caption>
+        <h3>風速:
+        <span id="p8"></span>
+        </p>
+        </h3>
+        <p>
+        <caption class="deg"></caption>
+        <h3>風向:
+        <span id="p9"></span>
+        </h3>
+        </p>
       </tr>
-    </p>
-    <p>
-      <tr>
-        <th>緯度：</th>
-        <td class="lon"></td>
-      </tr>
-    </p>
-    <p>
-      <tr>
-        <th>経度：</th>
-        <td calss="lat"></td>
-      </tr>
-    </p>
-    <p>
-      <tr>
-        <th>天気：</th>
-        <td class="weather"></td>
-      </tr>
-    </p>
-    <p>
-      <tr>
-        <th>最低気温：</th>
-        <td class="temn_min"></td>
-      </tr>
-    </p>
-    <p>
-      <tr>
-        <th>最高気温：</th>
-        <td class="temn_max"></td>
-      </tr>
-    </p>
-    <p>
-      <tr>
-        <th>湿度：</th>
-        <td class="humidity"></td>
-      </tr>
-    </p>
-    <p>
-      <tr>
-        <th>風速：</th>
-        <td class="spead"></td>
-      </tr>
-    </p>
-    <p>
-      <tr>
-        <th>風向：</th>
-        <td class="deg"></td>
-      </tr>
-    </p>
-    </tbody>
+    </center>
    </body>
+  
 </html>
 
 

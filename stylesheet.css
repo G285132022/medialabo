@@ -1,16 +1,25 @@
 h2 {
-    text-shadow: rgb(73, 87, 244) ;
+    color: rgb(248, 123, 20);
 }
 h3 {
-    text-shadow: rgba(242, 249, 248, 0.279) 1px 1px 2px ;
+    color: rgba(203, 26, 120, 0.959);
 }
 h4{
     text-shadow: rgb(222, 233, 239) 2px 2px 3px;
 }
 body {
-	background: linear-gradient(blue, 10%, pink);
+	background: linear-gradient(to top, rgba(217, 175, 217, 0.7) 0%, rgba(151, 217, 225, 0.7) 100%);
 }
 a {
-    color: rgb(246, 88, 14);
+    color: rgb(8, 177, 141);
     text-decoration: none;
+}
+p{
+    background: linear-gradient(to right,rgb(237, 250, 56),rgb(230, 49, 152));
+}
+o{
+    color:brown;
+}
+h4{
+    color:black;
 }
